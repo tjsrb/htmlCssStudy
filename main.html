@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>쇼핑</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./main.css">  
+    </head>
+    <body>
+        <div class="align-center"> 
+            <img src="./img/logo.png" id="logo" class ="logo">
+        </div>
+        <div class="align-center">
+            <button id="btnTshirt" class="btn cloth">상의 </button>
+            <button id="btnPants"class="btn cloth">하의 </button>
+            <button id="btnSkirt"class="btn cloth">치마 </button>
+            <button id="btnYellow"class="btn yellow">노랑 </button>
+            <button id="btnPink"class="btn pink">분홍 </button>
+            <button id="btnBlue"class="btn blue">파랑 </button>
+        </div>
+        
+        <div id="" class="align-center Pants BL">  
+            <br>
+            <div id="lblue">
+                <img src="./img/blue_p.png" class="left">
+                <div>
+                   <strong class="right">하의,파랑</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id=""  class="align-center Skirt BL">  
+            <br>
+            <div id="lblue">
+                <img src="./img/blue_s.png" class="left">
+                <div>
+                   <strong class="right">치마,파랑</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id=""class="align-center Tshirt BL">  
+            <br>
+            <div id="lblue">
+                <img src="./img/blue_t.png" class="left">
+                <div>
+                   <strong class="right">상의,파랑</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="" class="align-center Pants PK">  
+            <br>
+            <div id="lblue">
+                <img src="./img/pink_p.png" class="left">
+                <div>
+                   <strong class="right">하의,분홍</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="" class="align-center Skirt PK">  
+            <br>
+            <div id="lblue">
+                <img src="./img/pink_s.png" class="left">
+                <div>
+                   <strong class="right">치마,분홍</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="" class="align-center Tshirt PK">  
+            <br>
+            <div id="lblue">
+                <img src="./img/pink_t.png" class="left">
+                <div>
+                   <strong class="right">상의,분홍</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="" class="align-center Pants YL">  
+            <br>
+            <div id="lblue">
+                <img src="./img/yellow_p.png" class="left">
+                <div>
+                   <strong class="right">하의,노랑</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="" class="align-center Skirt YL">  
+            <br>
+            <div id="lblue">
+                <img src="./img/yellow_s.png" class="left">
+                <div>
+                   <strong class="right">치마,노랑</strong>
+                </div>
+            </div>
+        </div>
+
+        <div id="" class="align-center Tshirt YL">  
+            <br>
+            <div id="lblue">
+                <img src="./img/yellow_t.png" class="left">
+                <div>
+                   <strong class="right">상의,노랑</strong>
+                </div>
+            </div>
+        </div>
+        <script>
+            const $logo = document.getElementById('logo');
+            const $btnTshirt = document.getElementById('btnTshirt');
+            const $btnPants = document.getElementById('btnPants');
+            const $btnSkirt = document.getElementById('btnSkirt');
+            const $btnBlue = document.getElementById('btnBlue');
+            const $btnPink = document.getElementById('btnPink');
+            const $btnYellow = document.getElementById('btnYellow');
+
+            const $All = document.getElementsByClassName('align-center');
+            const $Tshirt = document.getElementsByClassName('Tshirt');
+            const $Pants = document.getElementsByClassName('Pants');
+            const $Skirt = document.getElementsByClassName('Skirt');
+            const $blue = document.getElementsByClassName('BL');
+            const $pink = document.getElementsByClassName('PK');
+            const $yellow = document.getElementsByClassName('YL');
+
+            $logo.addEventListener("click",Reset);
+            $btnTshirt.addEventListener("click",clothClickEvent);
+            $btnPants.addEventListener("click",patnsClickEvent);
+            $btnSkirt.addEventListener("click",skirtClickEvent);
+
+            $btnBlue.addEventListener("click",BlueClickEvent);
+            $btnPink.addEventListener("click",PinkClickEvent);
+            $btnYellow.addEventListener("click",YellowClickEvent);
+
+            function clothClickEvent(){
+                DisplayNoneAll();
+                for(let i=0; i<$Tshirt.length; i++){
+                    $Tshirt[i].style.display ="block";
+                }
+            }
+            function patnsClickEvent(){
+                DisplayNoneAll();
+                for(let i=0; i<$Pants.length; i++){
+                    $Pants[i].style.display ="block";
+                }
+            }
+            function skirtClickEvent(){ 
+                DisplayNoneAll();
+                for(let i=0; i<$Skirt.length; i++){
+                    $Skirt[i].style.display ="block";
+                }
+            }
+            function BlueClickEvent(){
+                DisplayNoneAll();
+                for(let i=0; i<$blue.length; i++){
+                    $blue[i].style.display ="block";
+                }
+                
+            }
+             function PinkClickEvent(){
+                DisplayNoneAll();
+                for(let i=0; i<$pink.length; i++){
+                    $pink[i].style.display ="block";
+                }
+            }
+            function YellowClickEvent(){
+                DisplayNoneAll();
+                for(let i=0; i<$yellow.length; i++){
+                    $yellow[i].style.display ="block";
+                }
+            }
+
+            function DisplayNoneAll(){
+                for(let i=0; i<$Tshirt.length; i++){
+                    $Tshirt[i].style.display = "none";
+                }
+                for(let i=0; i<$Pants.length; i++){
+                    $Pants[i].style.display = "none";
+                }
+                for(let i=0; i<$Skirt.length; i++){
+                    $Skirt[i].style.display = "none";
+                }
+                
+            }
+
+            function Reset(){
+                for(var i =0; i<$All.length; i++){
+                    $All[i].style.display ="block";
+                } 
+            }
+
+        </script>
+    </body>
+</hmtl>
